@@ -62,3 +62,29 @@
     color: white;
     cursor: pointer;
 }
+
+article {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 20px;
+    box-shadow: 1px 0px 1px 1px grey;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.title {
+    padding: 2px 5px;
+}
+.edit-btn {
+    background: transparent;
+    border: none;
+    color: green;
+    padding: 2px 0px;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #eb0404;
+    padding: 2px 5px;
+}
