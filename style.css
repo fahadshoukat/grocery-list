@@ -8,13 +8,12 @@
 .card {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    max-width: 50vw;
     margin: 10vh auto;
     justify-content: center;
     text-align: center;
     box-shadow: 0px 2px 2px 2px grey;
     letter-spacing: 4px;
-
 }
 
 .card-cover {
@@ -108,4 +107,43 @@ article {
 
 .clear-btn:hover {
     border: 1px solid #eb0404;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: 70vw;
+        margin: 10vh auto;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0px 2px 2px 2px grey;
+        letter-spacing: 2px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: 90vw;
+        margin: 10vh auto;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0px 2px 2px 2px grey;
+        letter-spacing: 2px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: 95vw;
+        margin: 10vh auto;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0px 2px 2px 2px grey;
+        letter-spacing: 2px;
+    }
 }
