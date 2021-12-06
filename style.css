@@ -17,10 +17,48 @@
 }
 
 .card-cover {
-    height: 150px;
+    height: 100px;
     width: 100%;
+    padding: 5px 10px;
+}
+
+.card-cover h2 {
+    color: #0465EB;
+    padding: 0px 5px;
+}
+
+.card-cover p {
+    padding: 5px;
 }
 
 .card-content {
     flex: 1;
+}
+
+.form {
+    padding: 10px 5px;
+    align-items: center;
+}
+
+#inputBox {
+    width: 80%;
+    padding: 3px;
+    border: 1px solid #0465EB;
+    border-radius: 2px;
+}
+
+.add-btn {
+    width: 15%;
+    padding: 3px;
+    border-radius: 2px;
+    border: 1px solid #0465EB;
+    background: transparent;
+    color: #0465EB;
+    transition: 0.3s linear;
+}
+
+.add-btn:hover {
+    background: #0465EB;
+    color: white;
+    cursor: pointer;
 }
