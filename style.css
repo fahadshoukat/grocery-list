@@ -31,7 +31,7 @@
     margin: 5px 10px;
     align-items: center;
     border-radius: 2px;
-    visibility: hidden;
+    height: 20px;
 }
 
 .card-content {
@@ -77,6 +77,9 @@ article {
     visibility: hidden;
 }
 
+.show-article {
+    visibility: visible;
+}
 .title {
     padding: 2px 5px;
 }
@@ -85,6 +88,7 @@ article {
     border: none;
     color: green;
     padding: 2px 0px;
+    cursor: pointer;
 }
 
 .delete-btn {
@@ -92,6 +96,7 @@ article {
     border: none;
     color: #eb0404;
     padding: 2px 5px;
+    cursor: pointer;
 }
 
 .clear-btn {
@@ -107,6 +112,16 @@ article {
 
 .clear-btn:hover {
     border: 1px solid #eb0404;
+}
+
+.red {
+    color: #721c24;
+    background: #f8d7da;
+}
+
+.green {
+    color: #155724;
+    background: #d4edda;
 }
 
 @media screen and (max-width: 768px) {
