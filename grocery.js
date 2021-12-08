@@ -4,7 +4,7 @@ const addBtn = document.querySelector(".add-btn");
 const itemList = document.querySelector(".item-container");
 const clearBtn = document.querySelector(".clear-btn");
 const itemCard = document.querySelector(".card-content");
-const items = [];
+
 addBtn.addEventListener("click", function (e) {
     e.preventDefault();
     let value = input.value;
