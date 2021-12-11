@@ -22,7 +22,7 @@ addBtn.addEventListener("click", function (e) {
         attr.value = id;
         element.setAttributeNode(attr);
         element.classList.add("list-item");
-        element.innerHTML = `<p class="title"></p>
+        element.innerHTML = `<p class="title">${value}</p>
         <div class="btn-container">
             <button class="edit-btn">
                 <i class="fas fa-edit"></i>
@@ -31,7 +31,27 @@ addBtn.addEventListener("click", function (e) {
                 <i class="fas fa-trash-alt"></i>
             </button>
         </div>`;
-    } else {
+        ListItem.appendChild(element);
+        displayMessage("Item saved to list", "green");
+        itemContainer.classList.add("show-article");
+
+        const editBtn = document.querySelector(".edit-btn");
+        editBtn.addEventListener('click', function(){
+
+        });
+
+        const deleteBtn = document.querySelector(".delete-btn");
+        deleteBtn.addEventListener('click', function(e){
+            
+            const element = e.currentTarget.parentElement.parentElement;
+
+            ListItem.removeChild(element);
+        });
+    }
+    else if (!value && editFlag){
+        console.log("Editing");
+    } 
+    else {
         displayMessage("Please Enter value", "red");
     }
 });

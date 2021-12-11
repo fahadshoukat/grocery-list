@@ -74,10 +74,9 @@ article {
     box-shadow: 1px 0px 1px 1px grey;
     align-items: center;
     border-radius: 2px;
-    visibility: hidden;
 }
 
-.show-article {
+.show-container {
     visibility: visible;
 }
 .title {
@@ -107,7 +106,7 @@ article {
     color: #eb0404;
     width: 89%;
     border-radius: 2px;
-    visibility: hidden;
+    cursor: pointer;
 }
 
 .clear-btn:hover {
