@@ -35,28 +35,29 @@ addBtn.addEventListener("click", function (e) {
         itemContainer.classList.add("show-container");
 
         const editBtn = document.querySelector(".edit-btn");
-        editBtn.addEventListener('click', function(){
+        editBtn.addEventListener('click', function () {
 
         });
 
         const deleteBtn = document.querySelector(".delete-btn");
-        deleteBtn.addEventListener('click', function(e){
-            
-            const element = e.currentTarget.parentElement.parentElement;
+        deleteBtn.addEventListener('click', function (e) {
 
+            const element = e.currentTarget.parentElement.parentElement;
+            console.log(element);
             ListItem.removeChild(element);
 
-            if(ListItem.children.length === 0){
+            if (ListItem.children.length === 0) {
                 itemContainer.classList.remove("show-container");
             }
+
 
         });
 
         setBackToDefault();
     }
-    else if (!value && editFlag){
+    else if (!value && editFlag) {
         console.log("Editing");
-    } 
+    }
     else {
         displayMessage("Empty value", "red");
     }
@@ -65,7 +66,8 @@ addBtn.addEventListener("click", function (e) {
 clearBtn.addEventListener("click", function () {
 
     const allItems = document.querySelectorAll(".list-item");
-    if(allItems.length > 0) {
+    console.log(allItems);
+    if (allItems.length > 0) {
         allItems.forEach((item) => {
             ListItem.removeChild(item);
         });
@@ -86,7 +88,7 @@ function displayMessage(text, color) {
     }, 1000);
 }
 
-function setBackToDefault(){
+function setBackToDefault() {
     input.value = "";
     editFlag = false;
     editId = "";
