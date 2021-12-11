@@ -46,13 +46,20 @@ addBtn.addEventListener("click", function (e) {
             const element = e.currentTarget.parentElement.parentElement;
 
             ListItem.removeChild(element);
+
+            if(ListItem.children.length === 0){
+                itemContainer.classList.remove("show-container");
+            }
+
         });
+
+        setBackToDefault();
     }
     else if (!value && editFlag){
         console.log("Editing");
     } 
     else {
-        displayMessage("Please Enter value", "red");
+        displayMessage("Empty value", "red");
     }
 });
 
@@ -64,4 +71,11 @@ function displayMessage(text, color) {
         alertMessage.textContent = "";
         alertMessage.classList.remove(`${color}`);
     }, 1000);
+}
+
+function setBackToDefault(){
+    input.value = "";
+    editFlag = false;
+    editId = "";
+    addBtn.textContent = "Add";
 }
