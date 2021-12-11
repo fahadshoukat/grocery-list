@@ -81,6 +81,7 @@ article {
 }
 .title {
     padding: 2px 5px;
+    text-transform: capitalize;
 }
 .edit-btn {
     background: transparent;
