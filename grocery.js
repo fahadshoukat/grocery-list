@@ -1,20 +1,38 @@
 const alertMessage = document.querySelector(".message");
 const input = document.getElementById("inputBox");
 const addBtn = document.querySelector(".add-btn");
-const itemList = document.querySelector(".item-container");
+const ListItem = document.querySelector(".list-item");
 const clearBtn = document.querySelector(".clear-btn");
-const itemCard = document.querySelector(".card-content");
+const itemContainer = document.querySelector(".item-container");
+
+let editItem;
+let editFlag = false;
+let editId = "";
 
 addBtn.addEventListener("click", function (e) {
+
     e.preventDefault();
     let value = input.value;
-    if (value) {
-        items.push(value);
-        input.value = "";
-        itemList.classList.add("show-article");
-        displayMessage("Item added to list", "green");
+    const id = new Date().getTime().toString();
+
+    if (value && !editFlag) {
+
+        const element = document.createElement("article");
+        let attr = document.createAttribute("data-id");
+        attr.value = id;
+        element.setAttributeNode(attr);
+        element.classList.add("list-item");
+        element.innerHTML = `<p class="title"></p>
+        <div class="btn-container">
+            <button class="edit-btn">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="delete-btn">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>`;
     } else {
-        displayMessage("Empty value", "red");
+        displayMessage("Please Enter value", "red");
     }
 });
 
