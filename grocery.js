@@ -1,11 +1,10 @@
 const alertMessage = document.querySelector(".message");
-const input = document.getElementById("inputBox");
 const addBtn = document.querySelector(".add-btn");
 const ListItem = document.querySelector(".list-item");
 const clearBtn = document.querySelector(".clear-btn");
 const itemContainer = document.querySelector(".item-container");
 
-/************  function to get todos from localStorage *******************/
+/************ start function to get todos from localStorage *******************/
 
 function getTodos(){
 
@@ -22,6 +21,28 @@ function getTodos(){
 
 /********* End of getTodo function ************/
 
+/****** start add function ******/
+
+function addTodo(){
+
+    let input = document.getElementById("inputBox").value;
+    let todos = getTodos();
+    todos.push(input);
+
+    displayMessage("Item Saved To List", "green");
+    localStorage.setItem('todo', JSON.stringify(todos));
+
+    showTodo();
+    setBackToDefault();
+
+    return false;
+}
+
+/****** end of add function ******/
+
+/***** start remove function *****/
+
+/***** end remove function *****/
 
 function displayMessage(text, color) {
     alertMessage.textContent = text;
