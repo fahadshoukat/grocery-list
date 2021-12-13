@@ -32,7 +32,7 @@ function addTodo(){
     localStorage.setItem('todo', JSON.stringify(todos));
     
     showTodo();
-    setBackToDefault();
+    // setBackToDefault();
 
     return false;
 }
@@ -63,9 +63,11 @@ function showTodo() {
     
     let todos = getTodos();
     
-    let myList = '<ul class="list-item">';
+    let myList = '';
     for(let i = 0; i < todos.length; i++) {
-        myList += `<li class="title">${todos[i]}</li>
+
+        myList += `<ul class="list-item">
+        <li class="title">${todos[i]}</li>
         <li class="btn-container">
         <button class="edit-btn" id = ${i}>
         <i class="fas fa-edit"></i>
@@ -73,12 +75,14 @@ function showTodo() {
         <button class="delete-btn" id = ${i}>
         <i class="fas fa-trash-alt"></i>
         </button>
-        </li>`
+        </li>
+        </ul>`
     };
-    myList += '</ul>';
+    // myList += '';
     const itemContainer = document.querySelector(".item-container");
     itemContainer.innerHTML = myList;
 
+    itemContainer.classList.add("show-container");
 
 }
 /***** end showTodo function *****/
@@ -93,7 +97,10 @@ function displayMessage(text, color) {
     }, 1000);
 }
 
-function setBackToDefault() {
-    input.value = "";
-    addBtn.textContent = "Add";
-}
+// function setBackToDefault() {
+//     input.value = "";
+//     addBtn.textContent = "Add";
+// }
+
+addBtn.addEventListener('click', addTodo);
+showTodo();
