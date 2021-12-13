@@ -42,6 +42,20 @@ function addTodo(){
 
 /***** start remove function *****/
 
+function remove(){
+
+    let id = this.getAttribute('id');
+    let todos = getTodos();
+    todos.splice(id, 1);
+
+    displayMessage("Item Removed From List", "red");
+    localStorage.setItem('todo', JSON.stringify(todos));
+
+    showTodo();
+
+    return false;
+}
+
 /***** end remove function *****/
 
 function displayMessage(text, color) {
