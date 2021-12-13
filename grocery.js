@@ -5,6 +5,22 @@ const ListItem = document.querySelector(".list-item");
 const clearBtn = document.querySelector(".clear-btn");
 const itemContainer = document.querySelector(".item-container");
 
+/************  function to get todos from localStorage *******************/
+
+function getTodos(){
+
+    let todos = new Array;
+    let todoStr = localStorage.getItem('todo');
+
+    if(todoStr !== null){
+
+        todos = JSON.parse(todoStr)
+    }
+
+    return todos;
+}
+
+/********* End of getTodo function ************/
 
 
 function displayMessage(text, color) {
