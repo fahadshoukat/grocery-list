@@ -1,18 +1,19 @@
 const alertMessage = document.querySelector(".message");
 const addBtn = document.querySelector(".add-btn");
-const ListItem = document.querySelector(".list-item");
 const clearBtn = document.querySelector(".clear-btn");
+
 
 /***** start function to get todos from localStorage *****/
 
-function getTodos(){
-    
+
+function getTodos() {
+
     let todos = new Array;
     let todoStr = localStorage.getItem('todo');
 
-    if(todoStr !== null){
+    if (todoStr !== null) {
 
-        todos = JSON.parse(todoStr)
+        todos = JSON.parse(todoStr);
     }
 
     return todos;
@@ -22,50 +23,40 @@ function getTodos(){
 
 /****** start add function ******/
 
-function addTodo(){
-    
+function addTodo() {
+
     let input = document.getElementById("inputBox").value;
     let todos = getTodos();
     todos.push(input);
-    
     displayMessage("Item Saved To List", "green");
     localStorage.setItem('todo', JSON.stringify(todos));
-    
+
     showTodo();
-    // setBackToDefault();
 
     return false;
 }
 
 /****** end of add function ******/
 
-/***** start remove function *****/
+/***** start remove all items function *****/
 
-function remove(){
+clearBtn.onclick = function(e){
     
-    let id = this.getAttribute('id');
-    let todos = getTodos();
-    todos.splice(id, 1);
-    
-    displayMessage("Item Removed From List", "red");
-    localStorage.setItem('todo', JSON.stringify(todos));
-    
-    showTodo();
-    
-    return false;
+    console.log(e.target);
 }
-
-/***** end remove function *****/
+/***** end remove all items function *****/
 
 /***** start showTodo function *****/
 
 function showTodo() {
-    
+
+    document.getElementById("inputBox").value = "";
     let todos = getTodos();
+
     
     let myList = '';
-    for(let i = 0; i < todos.length; i++) {
-
+    for (let i = 0; i < todos.length; i++) {
+        
         myList += `<ul class="list-item">
         <li class="title">${todos[i]}</li>
         <li class="btn-container">
@@ -78,14 +69,18 @@ function showTodo() {
         </li>
         </ul>`
     };
-    // myList += '';
+    
+    myList += `<button class="clear-btn">Clear Items</button>`;
+    
+    document.querySelector('.item-container').classList.add("show-container");
+
     const itemContainer = document.querySelector(".item-container");
     itemContainer.innerHTML = myList;
 
-    itemContainer.classList.add("show-container");
 
 }
 /***** end showTodo function *****/
+
 
 function displayMessage(text, color) {
     alertMessage.textContent = text;
@@ -97,10 +92,7 @@ function displayMessage(text, color) {
     }, 1000);
 }
 
-// function setBackToDefault() {
-//     input.value = "";
-//     addBtn.textContent = "Add";
-// }
 
 addBtn.addEventListener('click', addTodo);
 showTodo();
+
