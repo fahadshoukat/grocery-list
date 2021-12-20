@@ -14,6 +14,7 @@ function getTodos() {
     if (todoStr !== null) {
 
         todos = JSON.parse(todoStr);
+
     }
 
     return todos;
@@ -33,16 +34,17 @@ function addTodo() {
 
     showTodo();
 
-    return false;
 }
 
 /****** end of add function ******/
 
 /***** start remove all items function *****/
-
-clearBtn.onclick = function(e){
-    
-    console.log(e.target);
+function removeAllItems(){
+    let todos = getTodos();
+    todos.length = 0;
+    let newTodos = todos;
+    localStorage.setItem('todo', JSON.stringify(newTodos));
+    showTodo();
 }
 /***** end remove all items function *****/
 
@@ -53,10 +55,10 @@ function showTodo() {
     document.getElementById("inputBox").value = "";
     let todos = getTodos();
 
-    
+
     let myList = '';
     for (let i = 0; i < todos.length; i++) {
-        
+
         myList += `<ul class="list-item">
         <li class="title">${todos[i]}</li>
         <li class="btn-container">
@@ -69,9 +71,9 @@ function showTodo() {
         </li>
         </ul>`
     };
-    
-    myList += `<button class="clear-btn">Clear Items</button>`;
-    
+
+    myList += `<button class="clear-btn" onclick="removeAllItems()">Clear Items</button>`;
+
     document.querySelector('.item-container').classList.add("show-container");
 
     const itemContainer = document.querySelector(".item-container");
@@ -89,7 +91,7 @@ function displayMessage(text, color) {
     setTimeout(function () {
         alertMessage.textContent = "";
         alertMessage.classList.remove(`${color}`);
-    }, 1000);
+    }, 1500);
 }
 
 
