@@ -40,13 +40,35 @@ function addTodo() {
 
 /***** start remove all items function *****/
 function removeAllItems(){
+    
     let todos = getTodos();
     todos.length = 0;
+    
     let newTodos = todos;
     localStorage.setItem('todo', JSON.stringify(newTodos));
+    
     showTodo();
+    displayMessage("Remove All Items", "red");
 }
 /***** end remove all items function *****/
+
+/***** start remove function for one item *****/
+
+function removeItem(){
+
+    let selected = this.document.activeElement.parentNode.parentNode;
+    
+    let todos = getTodos();
+    todos.splice(selected, 1);
+
+    localStorage.setItem('todo', JSON.stringify(todos));
+
+    showTodo();
+    displayMessage("Remove Item", "red");
+}
+
+/***** end remove function for one item *****/
+
 
 /***** start showTodo function *****/
 
@@ -62,10 +84,10 @@ function showTodo() {
         myList += `<ul class="list-item">
         <li class="title">${todos[i]}</li>
         <li class="btn-container">
-        <button class="edit-btn" id = ${i}>
+        <button class="edit-btn" onclick="updateItem()" id = ${i}>
         <i class="fas fa-edit"></i>
         </button>
-        <button class="delete-btn" id = ${i}>
+        <button class="delete-btn" onclick="removeItem()" id = ${i}>
         <i class="fas fa-trash-alt"></i>
         </button>
         </li>
