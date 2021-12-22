@@ -74,9 +74,13 @@
     display: none;
 }
 
-
-
 .add-btn:hover {
+    background: #0465EB;
+    color: white;
+    cursor: pointer;
+}
+
+.update-btn:hover {
     background: #0465EB;
     color: white;
     cursor: pointer;

@@ -39,28 +39,25 @@ function addTodo() {
 /****** end of add function ******/
 
 /***** start remove all items function *****/
-function removeAllItems(){
-    
+function removeAllItems() {
+
     let todos = getTodos();
     todos.length = 0;
-    
+
     let newTodos = todos;
     localStorage.setItem('todo', JSON.stringify(newTodos));
-    
+
     showTodo();
-    displayMessage("Remove All Items", "red");
+    displayMessage("All Items Removed", "red");
 }
 /***** end remove all items function *****/
 
 /***** start remove function for one item *****/
 
-function removeItem(){
-
-    // console.log(this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent);
-
+function removeItem() {
 
     let selected = this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent;
-    
+
     let todos = getTodos();
     let selectedIndex = todos.indexOf(selected);
     todos.splice(selectedIndex, 1);
@@ -68,19 +65,38 @@ function removeItem(){
     localStorage.setItem('todo', JSON.stringify(todos));
 
     showTodo();
-    displayMessage("Remove Item", "red");
+    displayMessage("Item Remove", "red");
 }
 
 /***** end remove function for one item *****/
 
 /***** start remove function for one item *****/
 
-function updateItem(){
+function updateItem() {
 
     // console.log(this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent);
     let selected = this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent;
+
     document.getElementById("inputBox").value = selected;
-    addBtn.textContent = "update";
+    addBtn.style.display = "none";
+
+    const updateBtn = document.querySelector('.update-btn');
+    updateBtn.style.display = "inline";
+    updateBtn.onclick = function () {
+
+        let todos = getTodos();
+        let selectedIndex = todos.indexOf(selected);
+        let newItem = document.getElementById("inputBox").value;
+
+        todos.splice(selectedIndex, 1, newItem);
+
+        localStorage.setItem('todo', JSON.stringify(todos));
+
+        showTodo();
+        displayMessage("Item Changed", "green");
+
+
+    }
 
 }
 
