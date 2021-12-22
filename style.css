@@ -62,6 +62,20 @@
     transition: 0.3s linear;
 }
 
+.update-btn {
+    width: 16%;
+    padding: 3px;
+    border-radius: 2px;
+    border: 1px solid #0465EB;
+    background: transparent;
+    color: #0465EB;
+    letter-spacing: 2px;
+    transition: 0.3s linear;
+    display: none;
+}
+
+
+
 .add-btn:hover {
     background: #0465EB;
     color: white;

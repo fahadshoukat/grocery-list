@@ -56,15 +56,32 @@ function removeAllItems(){
 
 function removeItem(){
 
-    let selected = this.document.activeElement.parentNode.parentNode;
+    // console.log(this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent);
+
+
+    let selected = this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent;
     
     let todos = getTodos();
-    todos.splice(selected, 1);
+    let selectedIndex = todos.indexOf(selected);
+    todos.splice(selectedIndex, 1);
 
     localStorage.setItem('todo', JSON.stringify(todos));
 
     showTodo();
     displayMessage("Remove Item", "red");
+}
+
+/***** end remove function for one item *****/
+
+/***** start remove function for one item *****/
+
+function updateItem(){
+
+    // console.log(this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent);
+    let selected = this.document.activeElement.parentNode.parentNode.firstChild.nextElementSibling.textContent;
+    document.getElementById("inputBox").value = selected;
+    addBtn.textContent = "update";
+
 }
 
 /***** end remove function for one item *****/
