@@ -70,7 +70,7 @@ function removeItem() {
 
 /***** end remove function for one item *****/
 
-/***** start remove function for one item *****/
+/***** start update function for one item *****/
 
 function updateItem() {
 
@@ -100,7 +100,7 @@ function updateItem() {
 
 }
 
-/***** end remove function for one item *****/
+/***** end update function for one item *****/
 
 
 /***** start showTodo function *****/
