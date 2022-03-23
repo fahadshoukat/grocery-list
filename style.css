@@ -36,7 +36,6 @@
 
 .item-container {
     flex: 1;
-    visibility: hidden;
 }
 
 .form {
