@@ -94,8 +94,8 @@ function updateItem() {
 
         showTodo();
         displayMessage("Item Changed", "green");
-
-
+        updateBtn.style.display = "none";
+        addBtn.style.display = "inline";
     }
 
 }
@@ -114,7 +114,7 @@ function showTodo() {
     let myList = '';
     for (let i = 0; i < todos.length; i++) {
 
-        myList += `<ul class="list-item">
+        myList += `<ul>
         <li class="title">${todos[i]}</li>
         <li class="btn-container">
         <button class="edit-btn" onclick="updateItem()" id = ${i}>

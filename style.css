@@ -1,183 +1,61 @@
-*,
-::before,
-::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.card {
-    display: flex;
-    flex-direction: column;
-    max-width: 50vw;
-    margin: 10vh auto;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0px 2px 2px 2px grey;
-    letter-spacing: 4px;
-}
-
-.card-cover {
-    height: 100px;
-    width: 100%;
-    padding: 5px 10px;
-}
-
-.card-cover h2 {
-    color: #0465EB;
-    padding: 0px 5px;
-}
-
-.card-cover p {
-    margin: 5px 10px;
-    align-items: center;
-    border-radius: 2px;
-    height: 20px;
-}
-
-.item-container {
-    flex: 1;
-}
-
-.form {
-    padding: 10px 5px;
-    align-items: center;
-}
-
-#inputBox {
-    width: 80%;
-    padding: 3px;
-    border: 1px solid #0465EB;
-    border-radius: 2px;
-}
-
-.add-btn {
-    width: 15%;
-    padding: 3px;
-    border-radius: 2px;
-    border: 1px solid #0465EB;
-    background: transparent;
-    color: #0465EB;
-    letter-spacing: 2px;
-    transition: 0.3s linear;
-}
 
 .update-btn {
-    width: 16%;
-    padding: 3px;
-    border-radius: 2px;
-    border: 1px solid #0465EB;
-    background: transparent;
-    color: #0465EB;
-    letter-spacing: 2px;
-    transition: 0.3s linear;
-    display: none;
-}
-
-.add-btn:hover {
-    background: #0465EB;
-    color: white;
-    cursor: pointer;
-}
-
-.update-btn:hover {
-    background: #0465EB;
-    color: white;
-    cursor: pointer;
+  display: none;
 }
 
 ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    margin: 5px 20px;
-    box-shadow: 1px 0px 1px 1px grey;
-    align-items: center;
-    border-radius: 2px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  height: 40px;
+  margin: 10px 0px;
+  padding: 0px 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  align-items: center;
+  border-radius: 2px;
 }
 
 .show-container {
-    visibility: visible;
+  visibility: visible;
 }
-.title {
-    padding: 2px 5px;
-    text-transform: capitalize;
-}
+
 .edit-btn {
-    background: transparent;
-    border: none;
-    color: green;
-    padding: 2px 0px;
-    cursor: pointer;
+  background: transparent;
+  border: none;
+  color: green;
+  padding: 2px 0px;
+  cursor: pointer;
 }
 
 .delete-btn {
-    background: transparent;
-    border: none;
-    color: #eb0404;
-    padding: 2px 5px;
-    cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #eb0404;
+  padding: 2px 5px;
+  cursor: pointer;
 }
 
 .clear-btn {
-    padding: 2px;
-    margin: 5px;
-    background: transparent;
-    border: 1px solid transparent;
-    color: #eb0404;
-    width: 89%;
-    border-radius: 2px;
-    cursor: pointer;
+  padding: 2px;
+  margin: 5px 0px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #eb0404;
+  width: 100%;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .clear-btn:hover {
-    border: 1px solid #eb0404;
+  border: 1px solid #eb0404;
 }
 
 .red {
-    color: #721c24;
-    background: #f8d7da;
+  color: #721c24;
+  background: #f8d7da;
 }
 
 .green {
-    color: #155724;
-    background: #d4edda;
-}
-
-@media screen and (max-width: 768px) {
-    .card {
-        display: flex;
-        flex-direction: column;
-        max-width: 70vw;
-        margin: 10vh auto;
-        justify-content: center;
-        text-align: center;
-        box-shadow: 0px 2px 2px 2px grey;
-        letter-spacing: 2px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .card {
-        display: flex;
-        flex-direction: column;
-        max-width: 90vw;
-        margin: 10vh auto;
-        justify-content: center;
-        text-align: center;
-        box-shadow: 0px 2px 2px 2px grey;
-        letter-spacing: 2px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .card {
-        display: flex;
-        flex-direction: column;
-        max-width: 95vw;
-        margin: 10vh auto;
-        justify-content: center;
-        text-align: center;
-        box-shadow: 0px 2px 2px 2px grey;
-        letter-spacing: 2px;
-    }
+  color: #155724;
+  background: #d4edda;
 }
